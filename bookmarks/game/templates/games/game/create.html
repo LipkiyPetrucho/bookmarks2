@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %} Создать игру {% endblock %}
+
+{% block content %}
+  <h1> Создать игру </h1>
+      <form method="post">
+        <div class="createGame">
+        {% csrf_token %}
+
+            {% crispy form %}
+
+        </div>
+        <div class="createGameButton">
+        <input class="btn btn-primary" type="submit" value="Создать игру">
+            </div>
+      </form>
+{% endblock %}
